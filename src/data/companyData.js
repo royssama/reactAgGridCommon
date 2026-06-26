@@ -1,0 +1,17 @@
+export const companyData = [
+  { region: '수원', businessType: 'IT', partner: '네이버클라우드', manager: '김기준', companyName: '회사1', aGroup: 678, bGroup: 124, cGroup: 678, dGroup: 124, eGroup: 789 },
+  { region: '수원', businessType: 'IT', partner: '네이버클라우드', manager: '김기준', companyName: '회사2', aGroup: 124, bGroup: 789, cGroup: 124, dGroup: 789, eGroup: 678 },
+  { region: '수원', businessType: 'IT', partner: '네이버클라우드', manager: '구본기', companyName: '회사3', aGroup: 789, bGroup: 678, cGroup: 789, dGroup: 56, eGroup: 124 },
+  { region: '수원', businessType: 'IT', partner: 'CNC', manager: '박희용', companyName: '회사4', aGroup: 124, bGroup: 124, cGroup: 124, dGroup: 321, eGroup: 789 },
+  { region: '수원', businessType: '반도체', partner: 'CNC', manager: '김영탁', companyName: '회사5', aGroup: 89, bGroup: 789, cGroup: 89, dGroup: 789, eGroup: 789 },
+  { region: '용인', businessType: '영업', partner: '제일서세스', manager: '구본기', companyName: '회사6', aGroup: 798, bGroup: 124, cGroup: 789, dGroup: 79, eGroup: 56 },
+  { region: '용인', businessType: '영업', partner: '제일서세스', manager: '구본기', companyName: '회사7', aGroup: 89, bGroup: 89, cGroup: 124, dGroup: 867, eGroup: 321 },
+  { region: '용인', businessType: '반도체', partner: '제일서세스', manager: '김기준', companyName: '회사8', aGroup: 789, bGroup: 789, cGroup: 789, dGroup: 789, eGroup: 124 },
+  { region: '용인', businessType: '반도체', partner: '파워에이드', manager: '박희용', companyName: '회사9', aGroup: 79, bGroup: 56, cGroup: 56, dGroup: 321, eGroup: 789 },
+  { region: '용인', businessType: '반도체', partner: '파워에이드', manager: '박희용', companyName: '회사10', aGroup: 867, bGroup: 321, cGroup: 678, dGroup: 321, eGroup: 789 },
+  { region: '안산', businessType: '제조', partner: 'CNC', manager: '박희용', companyName: '회사11', aGroup: 789, bGroup: 124, cGroup: 124, dGroup: 56, eGroup: 321 },
+  { region: '안산', businessType: '제조', partner: 'CNC', manager: '박희용', companyName: '회사12', aGroup: 56, bGroup: 789, cGroup: 789, dGroup: 321, eGroup: 124 },
+  { region: '안산', businessType: '제조', partner: 'CNC', manager: '구본기', companyName: '회사13', aGroup: 321, bGroup: 321, cGroup: 124, dGroup: 124, eGroup: 89 },
+  { region: '안산', businessType: '제조', partner: '네이버클라우드', manager: '구본기', companyName: '회사14', aGroup: 453, bGroup: 124, cGroup: 89, dGroup: 89, eGroup: 124 },
+  { region: '안산', businessType: '영업', partner: '제일서세스', manager: '김기준', companyName: '회사15', aGroup: 867, bGroup: 789, cGroup: 678, dGroup: 789, eGroup: 789 },
+];

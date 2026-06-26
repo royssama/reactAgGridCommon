@@ -1,0 +1,134 @@
+.company-grid-page {
+  min-height: 100vh;
+  padding: 24px;
+  background: #f5f5f5;
+  box-sizing: border-box;
+}
+
+.company-grid-header h1 {
+  margin: 0 0 16px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.company-grid-toolbar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.quick-filter-input {
+  flex: 1;
+  min-width: 280px;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.quick-filter-input:focus {
+  outline: none;
+  border-color: #4caf50;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+.reset-button {
+  padding: 10px 18px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.reset-button:hover {
+  background: #f0f0f0;
+}
+
+.company-grid-container {
+  height: calc(100vh - 140px);
+  min-height: 400px;
+  width: 100%;
+}
+
+/* 이미지와 유사한 연두색 헤더 스타일 */
+.company-grid-theme {
+  --ag-header-background-color: #c6efce;
+  --ag-header-foreground-color: #000;
+  --ag-border-color: #000;
+  --ag-row-border-color: #000;
+  --ag-cell-horizontal-border: solid #000;
+  --ag-borders: solid 1px;
+  --ag-font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+  --ag-font-size: 14px;
+}
+
+.company-grid-theme .ag-header-cell-label {
+  font-weight: 600;
+}
+
+.company-grid-theme .ag-header-cell,
+.company-grid-theme .ag-cell {
+  border-right: 1px solid #000;
+}
+
+.company-grid-theme .ag-row {
+  border-bottom: 1px solid #000;
+}
+
+.company-grid-theme .ag-floating-filter-input {
+  font-size: 13px;
+}
+
+.group-column-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 6px;
+}
+
+.group-column-header-title {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.group-column-header-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: 1px solid #666;
+  border-radius: 4px;
+  background: #fff;
+  color: #333;
+  font-size: 11px;
+  line-height: 1;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.group-column-header-btn:hover {
+  background: #e8f5e9;
+  border-color: #4caf50;
+}
+
+.group-column-header-btn.is-expanded {
+  color: #2e7d32;
+}
+
+.company-grid-theme .ag-spanned-cell-wrapper > .ag-spanned-cell {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.company-grid-theme .ag-spanned-cell-wrapper {
+  border-bottom: none;
+}
