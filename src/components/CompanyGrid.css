@@ -123,6 +123,29 @@
   color: #2e7d32;
 }
 
+/* 그룹 행 토글 아이콘을 헤더처럼 셀 오른쪽으로 */
+.company-grid-theme .ag-cell-wrapper.ag-row-group {
+  justify-content: space-between;
+  width: 100%;
+}
+
+.company-grid-theme .ag-cell-wrapper.ag-row-group .ag-group-value {
+  flex: 1;
+  min-width: 0;
+}
+
+.company-grid-theme .ag-cell-wrapper.ag-row-group .ag-group-expanded,
+.company-grid-theme .ag-cell-wrapper.ag-row-group .ag-group-contracted {
+  order: 2;
+  margin-right: 0 !important;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.company-grid-theme .ag-cell-wrapper.ag-row-group .ag-group-child-count {
+  order: 1;
+}
+
 .company-grid-theme .ag-spanned-cell-wrapper > .ag-spanned-cell {
   display: flex;
   align-items: center;
