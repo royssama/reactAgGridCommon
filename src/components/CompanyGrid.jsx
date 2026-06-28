@@ -3,6 +3,7 @@ import { AgGridReact } from 'ag-grid-react';
 import { AllCommunityModule, ModuleRegistry } from 'ag-grid-community';
 import { RowGroupingModule } from 'ag-grid-enterprise';
 import { companyData } from '../data/companyData';
+import { getGroupPathValue, isRegionColumnFirstRow, shouldContinueGroupCell } from '../utils/groupSpanUtils';
 import GroupColumnHeader from './GroupColumnHeader';
 import './CompanyGrid.css';
 
@@ -29,6 +30,12 @@ const createGroupColumn = (field, headerName, minWidth) => ({
   filterParams: textFilterParams,
   minWidth,
 });
+
+const REGION_CLASS_MAP = {
+  수원: 'region-bg01',
+  용인: 'region-bg02',
+  안산: 'region-bg03',
+};
 
 export default function CompanyGrid() {
   const gridRef = useRef(null);
@@ -57,12 +64,14 @@ export default function CompanyGrid() {
     };
   }, []);
 
-  const autoGroupColumnDef = useMemo(() => {
-    return {
-      minWidth: 200,
-      headerComponent: GroupColumnHeader,
-    };
-  }, []);
+  const autoGroupColumnDef = useMemo(() => ({
+    minWidth: 200,
+    headerComponent: GroupColumnHeader,
+    cellClassRules: {
+      'group-cell-span-continue': shouldContinueGroupCell,
+    },
+    cellStyle: { display: 'flex', alignItems: 'center' },
+  }), []);
 
   const handleQuickFilterChange = useCallback((value) => {
     setQuickFilter(value);
@@ -73,6 +82,28 @@ export default function CompanyGrid() {
     setQuickFilter('');
     gridRef.current?.api.setGridOption('quickFilterText', '');
     gridRef.current?.api.setFilterModel(null);
+  }, []);
+
+
+
+//첫번쨰역만 배경색 적용
+  const getRowClass = useCallback((params) => {
+    const { node } = params;
+    const region = getGroupPathValue(node, 'region');
+    const regionKey = region?.key ?? region;
+    const regionClass = REGION_CLASS_MAP[regionKey];
+    if (!regionClass) return '';
+
+    const isRegionGroupRow = node.group && node.level === 0;
+    const isFirstChildInGroup = isRegionColumnFirstRow(node);
+
+    
+    if (isRegionGroupRow || isFirstChildInGroup) {
+      return `${regionClass} group-row level-${node.level}`;
+    }
+    
+
+    return '';
   }, []);
 
   return (
@@ -102,6 +133,8 @@ export default function CompanyGrid() {
           autoGroupColumnDef={autoGroupColumnDef}
           groupHideOpenParents={true}
           groupDisplayType="multipleColumns"
+          //columnHoverHighlight={true} // 마우스 오버 영역 배경 으로 표시 
+          getRowClass={getRowClass}
           groupDefaultExpanded={0}
           /*   값	      동작
               0         전부 접힘 (기본값)

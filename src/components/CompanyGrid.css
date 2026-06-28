@@ -155,3 +155,42 @@
 .company-grid-theme .ag-spanned-cell-wrapper {
   border-bottom: none;
 }
+
+/* cellClassRules: 같은 부모 그룹 내 이어지는 셀 (CSS rowspan 효과) */
+.company-grid-theme .ag-cell.group-cell-span-continue {
+  border-top: none !important;
+}
+
+.company-grid-theme .ag-cell.group-cell-span-continue .ag-group-value,
+.company-grid-theme .ag-cell.group-cell-span-continue .ag-group-contracted,
+.company-grid-theme .ag-cell.group-cell-span-continue .ag-group-expanded,
+.company-grid-theme .ag-cell.group-cell-span-continue .ag-group-checkbox {
+  visibility: hidden;
+}
+
+/* .company-grid-theme .ag-row-hover {
+  background-color: #ffffff !important;
+}
+.ag-column-hover {
+  background-color: #faffe9 !important;
+} */
+
+.region-bg01 {
+  background-color: #c9f0c5 !important;
+}
+
+.region-bg02 {
+  background-color: #c5d3f0 !important;
+}
+
+.region-bg03 {
+  background-color: #f0c5d7 !important;
+}
+
+
+.test_001{
+  border: 2px solid red;
+}
+.test_002{
+  border:  2px solid blue;
+}
